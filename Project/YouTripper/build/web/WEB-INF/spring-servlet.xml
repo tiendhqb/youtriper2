@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:websocket="http://www.springframework.org/schema/websocket"
+       xmlns:task ="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.0.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">           
+    
+    <mvc:annotation-driven />
+    <context:component-scan base-package="Controller" />
+    
+    <websocket:message-broker application-destination-prefix="/app">
+        <websocket:stomp-endpoint path="/hello">
+            <websocket:sockjs/>
+        </websocket:stomp-endpoint>
+        <websocket:simple-broker prefix="/topic"/>
+    </websocket:message-broker>
+    
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+     
+    <bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/views/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+    <!-- declare DAO beans -->  
+    <bean id="packageDAO" class="Implement.DAO.PackageDAOImpl" autowire="constructor" scope="singleton"/>  
+    <bean id="categoryDAO" class="Implement.DAO.CategoryDAOImpl" autowire="constructor" scope="singleton"/>  
+    <bean id="subCategoryDAO" class="Implement.DAO.SubCategoryDAOImpl" autowire="constructor" scope="singleton"/>  
+    <bean id="activityDAO" class="Implement.DAO.ActivityDAOImpl" autowire="constructor" scope="singleton"/>  
+    <bean id="amenitiesDAO" class="Implement.DAO.AmenitiesDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="keywordDAO" class="Implement.DAO.KeywordDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="transporationDAO" class="Implement.DAO.TransporationDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="groupTypeDAO" class="Implement.DAO.GroupTypeDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="tripTypeDAO" class="Implement.DAO.TripTypeDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="providerDAO" class="Implement.DAO.ProviderDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="adminDAO" class="Implement.DAO.AdminDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="commonDAO" class="Implement.DAO.CommonDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="tripperDAO" class="Implement.DAO.TripperDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="bookingDAO" class="Implement.DAO.BookingDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="bookingMessageDAO" class="Implement.DAO.BookingMessageDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="reviewDAO" class="Implement.DAO.ReviewDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="signupTokenDAO" class="Implement.DAO.SignupTokenDAOImpl" autowire="constructor" scope="singleton"/>   
+    <bean id="countryDAO" class="Implement.DAO.CountryDAOImpl" autowire="constructor" scope="singleton"/>  
+    <bean id="providerNotificationDAO" class="Implement.DAO.ProviderNotificationDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="tripperNotificationDAO" class="Implement.DAO.TripperNotificationDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="loginCookieDAO" class="Implement.DAO.LoginCookieDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="bucketListDAOImpl" class="Implement.DAO.BucketListDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="conversationDAO" class="Implement.DAO.ConversationDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="reportTypeDAO" class="Implement.DAO.ReportTypeDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="reportDAO" class="Implement.DAO.ReportDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="forgotPasswordDAO" class="Implement.DAO.ForgotPasswordDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="runSendReviewEmail" class="Scheduler.SendReviewEmail"/>
+    <bean id="remindReviewEmail" class="Implement.DAO.RemindReviewEmailDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="providerSystemNotificationDAO" class="Implement.DAO.ProviderSystemNotificationDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="tripperSystemNotificationDAO" class="Implement.DAO.TripperSystemNotificationDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="keywordCollectionDAO" class="Implement.DAO.KeywordCollectionDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="systemKeywordDAO" class="Implement.DAO.SystemKeywordDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="TemporaryAmenitiesClassifierDAO" class="Implement.DAO.TemporaryAmenitiesClassifierDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="TemporaryClassifierDAO" class="Implement.DAO.TemporaryClassifierDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="TemporarySuitabilityClassifierDAO" class="Implement.DAO.TemporarySuitabilityClassifierDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="CertificateDAO" class="Implement.DAO.CertificateDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="TrackingUserDAO" class="Implement.DAO.TrackingUserDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="resourceDAO" class="Implement.DAO.ResourceDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="referralDAO" class="Implement.DAO.ReferralDAOlmpl" autowire="constructor" scope="singleton"/>
+    <bean id="offlinePackageDAO" class="Implement.DAO.OfflinePackageDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="usedResourcesDAO" class="Implement.DAO.UsedResourcesDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="salesmanDAO" class="Implement.DAO.SalesmanDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="temporaryPackageCertificatesDAO" class="Implement.DAO.TemporaryPackageCertificatesDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="servingPeriodDAO" class="Implement.DAO.ServingPeriodDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="temporaryOperationCycleDAO" class="Implement.DAO.TemporaryOperationCycleDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="resourceSkillDAO" class="Implement.DAO.ResourceSkillDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="businessResourceDAO" class="Implement.DAO.BusinessResourceDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="trippSourceDAO" class="Implement.DAO.TrippSourceDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="classifierDAO" class="Implement.DAO.ClassifierDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="suitabilityClassifierDAO" class="Implement.DAO.SuitabilityClassifierDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="amenitiesClassifierDAO" class="Implement.DAO.AmenitiesClassifierDAOImpl" autowire="constructor" scope="singleton"/>
+    <bean id="packageCertificatesDAO" class="Implement.DAO.PackageCertificatesDAOImpl" autowire="constructor" scope="singleton"/>
+    
+    
+    <!-- declare Service beans -->    
+    <bean id="messageService" class="Implement.Service.MessageServiceImpl" scope="singleton"/>
+    <bean id="packageService" class="Implement.Service.PackageServiceImpl" scope="singleton"/>
+    <bean id="providerService" class="Implement.Service.ProviderServiceImpl" scope="singleton"/>
+    <bean id="adminService" class="Implement.Service.AdminServiceImpl" scope="singleton"/>
+    <bean id="commonService" class="Implement.Service.CommonServiceImpl" scope="singleton"/>
+    <bean id="tripperService" class="Implement.Service.TripperServiceImpl" scope="singleton"/>
+    <bean id="errorService" class="Implement.Service.ErrorServiceImpl" scope="singleton"/>
+    <bean id="salesmanService" class="Implement.Service.SalesmanServiceImpl" scope="singleton"/>
+    
+    <!-- declare datasource bean -->  
+    <!--    <bean id="dataSource"  
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource" scope="singleton">  
+        <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />  
+        <property name="url" value="jdbc:sqlserver://27.254.77.180\SQLEXPRESS:1433;databaseName=YouTripperDB" />  
+        <property name="username" value="youtripperadmin" />  
+        <property name="password" value="Youtripper@2015" />  
+    </bean>  -->
+    <bean id="dataSource"  
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource" scope="singleton">  
+        <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />  
+        <!--<property name="url" value="jdbc:sqlserver://52.163.89.95\SQLEXPRESS:1433;databaseName=08052016YouTripperDB" />-->
+        <property name="url" value="jdbc:sqlserver://52.163.89.95\SQLEXPRESS:1433;databaseName=YouTripperProgrammerDB" />
+        <property name="username" value="sa" />  
+        <property name="password" value="Youtripper@2016" />  
+    </bean>
+    
+    <mvc:resources mapping="/Resources/**" location="/Resources/Theme"  
+                   cache-period="31556926"/>
+    
+    <mvc:interceptors>
+        <bean id="webContentInterceptor" class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+            <property name="cacheSeconds" value="0"/>
+            <property name="useExpiresHeader" value="true"/>
+            <property name="useCacheControlHeader" value="true"/>
+            <property name="useCacheControlNoStore" value="true"/>
+        </bean>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/Admin/**"/>
+            <mvc:exclude-mapping path="/Salesman/**"/>
+            <mvc:exclude-mapping path="/Resources/**"/>
+            <mvc:exclude-mapping path="/Home/Content"/>
+            <mvc:exclude-mapping path="/hello/**"/>
+            <bean class="Interceptor.IndentityInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/Admin/**"/>
+            <mvc:exclude-mapping path="/Salesman/**"/>
+            <mvc:exclude-mapping path="/Resources/**"/>
+            <mvc:exclude-mapping path="/Home/Content"/>
+            <mvc:exclude-mapping path="/hello/**"/>
+            <bean class="Interceptor.CookieInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/Provider/**"/>
+            <bean class="Interceptor.ProviderInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/Tripper/**"/>
+            <mvc:exclude-mapping path="/Tripper/PaymentSuccess"/>
+            <bean class="Interceptor.TripperInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/Message/**"/>
+            <bean class="Interceptor.MessageInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/Noti/**"/>
+            <bean class="Interceptor.NotificationInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/Admin/**"/>
+            <bean class="Interceptor.AdminInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/Salesman/**"/>
+            <bean class="Interceptor.SalesmanInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+   
+    <task:scheduled-tasks>
+        <task:scheduled ref="runSendReviewEmail" method="SendReviewEmail" cron="0 0 */24 * * *" />
+    </task:scheduled-tasks>
+</beans>

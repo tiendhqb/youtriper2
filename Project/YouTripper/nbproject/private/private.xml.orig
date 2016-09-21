@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+<<<<<<< HEAD
+            <file>file:/Users/QuangTran/Documents/quangJava/YTGit/UpdatedProject/Project/YouTripper/web/WEB-INF/views/providerSignup.jsp</file>
+            <file>file:/Users/QuangTran/Documents/quangJava/YTGit/UpdatedProject/Project/YouTripper/src/java/Interface/Service/CommonService.java</file>
+            <file>file:/Users/QuangTran/Documents/quangJava/YTGit/UpdatedProject/Project/YouTripper/src/java/Controller/CommonController.java</file>
+            <file>file:/Users/QuangTran/Documents/quangJava/YTGit/UpdatedProject/Project/YouTripper/web/Resources/Theme/js/youtripper.js</file>
+            <file>file:/Users/QuangTran/Documents/quangJava/YTGit/UpdatedProject/Project/YouTripper/src/java/DAO/CommonDAOImpl.java</file>
+            <file>file:/Users/QuangTran/Documents/quangJava/YTGit/UpdatedProject/Project/YouTripper/src/java/Interface/DAO/ProviderDAO.java</file>
+            <file>file:/Users/QuangTran/Documents/quangJava/YTGit/UpdatedProject/Project/YouTripper/src/java/Interface/DAO/CommonDAO.java</file>
+            <file>file:/Users/QuangTran/Documents/quangJava/YTGit/UpdatedProject/Project/YouTripper/src/java/Service/CommonServiceImpl.java</file>
+=======
+            <file>file:/W:/NewYTGit/YTGit/UpdatedProject/Project/YouTripper/src/java/Controller/ProviderController.java</file>
+            <file>file:/W:/NewYTGit/YTGit/UpdatedProject/Project/YouTripper/web/Resources/Theme/css/youtripper.css</file>
+            <file>file:/W:/NewYTGit/YTGit/UpdatedProject/Project/YouTripper/web/WEB-INF/views/provider/PackageRegistration.jsp</file>
+            <file>file:/W:/NewYTGit/YTGit/UpdatedProject/Project/YouTripper/web/WEB-INF/views/provider/packageCreation.jsp</file>
+            <file>file:/W:/NewYTGit/YTGit/UpdatedProject/Project/YouTripper/web/Resources/Theme/js/youtripper.js</file>
+            <file>file:/W:/NewYTGit/YTGit/UpdatedProject/Project/YouTripper/web/WEB-INF/views/provider/newBookingEngine.jsp</file>
+            <file>file:/W:/NewYTGit/YTGit/UpdatedProject/Project/YouTripper/src/java/Interface/Service/ProviderService.java</file>
+            <file>file:/W:/NewYTGit/YTGit/UpdatedProject/Project/YouTripper/web/Resources/Theme/css/style.css</file>
+            <file>file:/W:/NewYTGit/YTGit/UpdatedProject/Project/YouTripper/src/java/Service/ProviderServiceImpl.java</file>
+>>>>>>> ba5554ee157dc5e8ee06fd9a6887b30a2a5db4bb
+        </group>
+    </open-files>
+</project-private>

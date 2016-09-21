@@ -1,0 +1,25 @@
+[{
+    "dateRange": {
+        "05/11/2016": "#8AFFCF",
+        "05/12/2016": "#8AFFCF",
+        "05/13/2016": "#8AFFCF",
+        "05/14/2016": "#8AFFCF",
+        "05/15/2016": "#8AFFCF",
+        "05/16/2016": "#8AFFCF",
+        "05/17/2016": "#8AFFCF",
+        "05/18/2016": "#8AFFCF",
+        "05/19/2016": "#8AFFCF",
+        "05/20/2016": "#8AFFCF",
+        "05/21/2016": "#8AFFCF",
+        "05/22/2016": "#8AFFCF",
+        "05/23/2016": "#8AFFCF",
+        "05/24/2016": "#8AFFCF",
+        "05/25/2016": "#8AFFCF"
+    },
+    "description": "discount for holiday",
+    "priceAdult": null,
+    "priceChild": null,
+    "color": "#8AFFCF",
+    "$$hashKey": "object:226",
+    "percent": 5
+}]
